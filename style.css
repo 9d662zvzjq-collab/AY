@@ -211,3 +211,44 @@ padding:40px;
 text-align:center;
 
 }
+@media (max-width:768px){
+
+header{
+flex-direction:column;
+align-items:center;
+padding:15px;
+}
+
+.logo{
+margin-bottom:15px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+nav a,
+nav button{
+margin:5px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.hero p{
+font-size:16px;
+padding:0 15px;
+}
+
+.logo-circle{
+width:55px;
+height:55px;
+font-size:22px;
+}
+
+}
