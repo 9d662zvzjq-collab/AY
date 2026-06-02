@@ -54,5 +54,45 @@ document.querySelector(".hero p")
 langBtn.innerText="EN";
 
 }
+const translations = {
+  ar: {
+    home: "الرئيسية",
+    services: "الخدمات",
+    portfolio: "أعمالنا",
+    prices: "الأسعار",
+    contact: "تواصل",
+    welcome: "مرحباً بك في AY One",
+    desc: "خدمات احترافية في الدعاية والإعلان وإنشاء المواقع",
+    start: "ابدأ الآن"
+  },
 
+  en: {
+    home: "Home",
+    services: "Services",
+    portfolio: "Portfolio",
+    prices: "Prices",
+    contact: "Contact",
+    welcome: "Welcome to AY One",
+    desc: "Professional advertising and website creation services",
+    start: "Get Started"
+  }
+};
+
+let lang = "ar";
+
+function translatePage() {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[lang][key];
+  });
+
+  document.getElementById("langBtn").textContent =
+    lang === "ar" ? "EN" : "AR";
 }
+
+document.getElementById("langBtn").addEventListener("click", () => {
+  lang = lang === "ar" ? "en" : "ar";
+  translatePage();
+});
+
+translatePage(); 
